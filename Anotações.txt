@@ -1,0 +1,5 @@
+Instalação
+*Nas novas versões do angular 17 em diante a criação do projeto mudou o comando 
+~ng new 
+Cria umum projeto sem os modulos ou arquivo .module porque ele utiliza o standalone Caso precise dos modulos sera necessario dar o comendo 
+~ng new nome_projeto --no-standalone
