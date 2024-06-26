@@ -3,3 +3,5 @@ Instalação
 ~ng new 
 Cria umum projeto sem os modulos ou arquivo .module porque ele utiliza o standalone Caso precise dos modulos sera necessario dar o comendo 
 ~ng new nome_projeto --no-standalone
+
+Componentes sempre serao declarados dentro de declarations.
