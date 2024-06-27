@@ -4,4 +4,7 @@ Instalação
 Cria umum projeto sem os modulos ou arquivo .module porque ele utiliza o standalone Caso precise dos modulos sera necessario dar o comendo 
 ~ng new nome_projeto --no-standalone
 
-Componentes sempre serao declarados dentro de declarations.
+*Componentes sempre serao declarados dentro de declarations.
+*Os Imports sao apenas para modulos
+*Caso precise utilizar compenentes que estao declarados dentro de um modulo basta exportalos no mesmo lugar que estao sendo declarados e apos isso declarar o modulo no componente que voce precisar 
+optional changes é quando um valor pode ser undefined ou é ai voce coloca um ? apos a variavel que esta tentando acessar 
