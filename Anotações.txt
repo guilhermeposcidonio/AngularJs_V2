@@ -8,3 +8,74 @@ Cria umum projeto sem os modulos ou arquivo .module porque ele utiliza o standal
 *Os Imports sao apenas para modulos
 *Caso precise utilizar compenentes que estao declarados dentro de um modulo basta exportalos no mesmo lugar que estao sendo declarados e apos isso declarar o modulo no componente que voce precisar 
 optional changes é quando um valor pode ser undefined ou é ai voce coloca um ? apos a variavel que esta tentando acessar 
+*caso precise utilizar uma classe globalmete porem ela ja esta em um componente bas usar o ng-deep
+
+Ex. ::ng-deep tag #id.nome_classe{
+estilo css 
+}
+
+Obs.isso mudara todos os lugares que houver o nome dessa classe 
+
+*Caso voce queira colocar em classe especificas basta adicionar um id a tag 
+
+Ex. ::ng-deep #idClasse .nome_classe{
+estilo css 
+}
+
+e na tag adicionar o id assim so ira altera as tags com esse id e classe 
+é possivel adicionar por tag tambem colocando-a na frente porem esse recurso nao é muito utilizado 
+
+*Caso queira isolar o ng-deep para o componente espeficico que ele se encontra basta colocar o :host na frente 
+porem mesmo isolando sera aplicado em todo o componente que usar a classe ou o id colocado nele  
+
+*caso o arquivo css ja seja global o ng-deep nao funciona 
+
+*encapsulation: ViewEncapsulation.none ele torna o css do componente global tornando como se fosse o css do style
+obs. normalmente nao se usa isso pode causar problemas
+
+*propety binding é quando deixamos os valores das variveis dinamicos utilizando o [].
+Ex. [value]="variavel" que ira conter o que esta declarado na variavel e nao salvar o nome variavel 
+
+**event quando pegamos um evento do html podemos tipar ele de acordo com o retorno basta colocar um log somente no event sem o value e ver o que ele retorna
+Obs. isso nao funciona para o inputEvent para isso basta tipar apenas com o Event
+
+*eventos com [] envia um valor () recebe valor 
+
+*podemos usar o desabled tambem com atributos onde se retornar true ele desabilita e se retornar null ele habilita
+Ex. [attr.desabled]="varivavel ? true : null"
+
+*attr.title coloca um titulo sobre o botao 
+
+*Para trocar os styles utilizando o componente basta usar o propetybiding 
+Ex. [styles]="variavel"
+no componente ira ser um objeto se possuir mais de um estilo entao supondo que esteja assim 
+variave = {
+color: blue;
+width: 10px 
+}
+para atualiza-la deve se colocar da mesma forma 
+this.variave = {
+color: red
+width: 20px 
+}
+
+*quando necessario é possivel atribuir um valor a variavel no click
+Ex. (click)="variavel = true"
+
+*para output e input é ideal criar alias para referenciar 
+Ex.@Output('apelido') nomeDaVariavelEmit = new EventEmiter<tipagem>();
+
+*para utilizar um function dentro do anglar tem que ser fora do export class se nao ela da erro
+
+*no input podemos utilizar o get e o set para trabalhar os dados de pai para filho ou de filho para pai o output 
+e o get e set podem ser subistituidos por transform dependendo da versao do angular 
+obs. caso use o transform é possivel chmar uma function para que ele a execute 
+
+--------tipos de console-------
+console.log - apenas imprime a saida 
+console.group - agrupa uma quantidade de logs no final tem que colocar o console.grouEnd();
+console.table - retorna os valores em uma tabela
+console.time - mostra o tempo gasto para executar o codigo coloque no começo da funcao e no final coloque o console.timeEnd("") e ele
+retornara o tempo de execução 
+console.trace - "pausa" no local que foi declarado colocando uma ancora no log para o codgio 
+console.dir - ele devolve toda a função/metodo no log, o ele precisa, qual o tamanho e argumentos 
